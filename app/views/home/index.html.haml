@@ -1,0 +1,15 @@
+.jumbotron
+  %h1 Select an option
+  .row.middle
+    .col-md-6
+      .box
+        %p Employee Database
+        .text
+          You can manually add new employees to the database or import from csv file.
+        = link_to 'Employees', employees_path, class: 'btn btn-success btn-large btn-block'
+    .col-md-6
+      .box
+        %p Create Payslips
+        .text
+          Create payslips for employees who are already in the database and export in csv file.
+        = link_to 'Payslips', payslips_path, class: 'btn btn-warning btn-large btn-block'

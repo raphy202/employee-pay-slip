@@ -1,0 +1,23 @@
+%table.table
+
+  %thead
+    %th Name
+    %th Pay Period
+    %th.text-right Gross Income
+    %th.text-right Income Tax
+    %th.text-right Net Income
+    %th.text-right Super
+
+  %tbody
+    - @payslips.each do |ps|
+      %tr
+        %td=ps.name
+        %td=ps.pay_period
+        %td.text-right=dollar(ps.gross_income)
+        %td.text-right=dollar(ps.income_tax)
+        %td.text-right=dollar(ps.net_income)
+        %td.text-right=dollar(ps.super_amount)
+
+.well
+  Download:
+  =link_to 'csv', payslips_export_csv_path(payslips: @params_for_csv, format: :csv)
